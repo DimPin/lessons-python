@@ -59,7 +59,6 @@ for i in range(-n, n + 1):
 
 
 
-
 a = float(input('Input number: '))
 b = int(a)
 
