@@ -1,47 +1,47 @@
 # Пользователь вводит число, Вам необходимо вывести число Пи с той точностью знаков после запятой,
 # сколько указал пользователь(БЕЗ round())
 
-# from mpmath import mp
-# mp.dps = int(input('Input PI digits: ')) + 1
-# print(mp.pi)
+from mpmath import mp
+mp.dps = int(input('Input PI digits: ')) + 1
+print(mp.pi)
 
 # Задайте натуральное число N. Напишите программу, которая составит список простых
 # множителей числа N.
 
-# def prime_factor(n):
-#     i = 2
-#     prime_factors = []
+def prime_factor(n):
+    i = 2
+    prime_factors = []
 
-#     while i * i <= n:
-#         while n % i == 0:
-#             prime_factors.append(i)
-#             n /= i
-#         i += 1
+    while i * i <= n:
+        while n % i == 0:
+            prime_factors.append(i)
+            n /= i
+        i += 1
 
-#     if n > 1:
-#         prime_factors.append(n)
+    if n > 1:
+        prime_factors.append(n)
 
-#     return prime_factors
+    return prime_factors
 
-# n = int(input('Input n: '))
-# print(prime_factor(n))
+n = int(input('Input n: '))
+print(prime_factor(n))
 
 # Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся 
 # элементов исходной последовательности.
 
-# list = [2, 2, 3, 3, 4]
-# print(set(list))
+list = [2, 2, 3, 3, 4]
+print(set(list))
 
-# def get_unique_numbers(numbers):
-#     unique = []
+def get_unique_numbers(numbers):
+    unique = []
 
-#     for number in numbers:
-#         if number not in unique:
-#             unique.append(number)
+    for number in numbers:
+        if number not in unique:
+            unique.append(number)
 
-#     return unique
+    return unique
 
-# print(get_unique_numbers(list))
+print(get_unique_numbers(list))
 
 # Задана натуральная степень k. Сформировать случайным образом список коэффициентов 
 # (значения от 0 до 100) многочлена и вывести многочлен степени k.
