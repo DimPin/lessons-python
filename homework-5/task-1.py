@@ -10,9 +10,9 @@ def human_step(candys):
     step = int(input('Введите колическтво конфет: '))
 
     if step > 28 or step > candys or step < 1:
-        print('Введено не допустимое значение, использовано значение по умолчанию')
-        step = 1
-        return step
+        print('Введено не допустимое значение, попробуйте ещё раз')
+        step = 0
+        return human_step(candys)
     else:
         return step
 
