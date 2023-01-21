@@ -11,7 +11,7 @@ my_list = []
 for line in data:
     my_list = list(map(int, line.split()))
 
-data.close
+data.close()
 
 print(my_list)
 
