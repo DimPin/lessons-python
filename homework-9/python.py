@@ -1,11 +1,7 @@
 from telegram import Bot
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from random import randint
+from telegram.ext import Updater, MessageHandler, Filters
 
 token = '5708454167:AAGp2GFfRpeuSEZF9RTo9O5tEAyanFT3Hq8'
-
-A = 0
-B = 1
 
 bot = Bot(token)
 updater = Updater(token)
