@@ -39,27 +39,30 @@ def add_data(user_id, text1, text):
         path.write(f'{user_id}; {text1}; {text}\n')
 
 def calc(update: Update, context: CallbackContext):
-    text1 = update.message.text
-    text = update.message.text.split()
-    
-    for i in range(len(text)):
-        if text[i].isdigit():
-            text[i] = int(text[i])
+    try:
+        text1 = update.message.text
+        text = update.message.text.split()
+        
+        for i in range(len(text)):
+            if text[i].isdigit():
+                text[i] = int(text[i])
 
-    operations = ['/', '*', '-', '+']
-    for i in range(len(operations)):
-        j = 0
-        while j in range(len(text)):
-            if text[j] == operations[i]:
-                operate = j
-                text = SearchingNumbers(text, operate)
-                j -= 2
-            j += 1
+        operations = ['/', '*', '-', '+']
+        for i in range(len(operations)):
+            j = 0
+            while j in range(len(text)):
+                if text[j] == operations[i]:
+                    operate = j
+                    text = SearchingNumbers(text, operate)
+                    j -= 2
+                j += 1
 
-    context.bot.send_message(update.effective_chat.id, *text)
+        context.bot.send_message(update.effective_chat.id, *text)
 
-    user_id = update.message.from_user.id
-    add_data(user_id, text1, *text)
+        user_id = update.message.from_user.id
+        add_data(user_id, text1, *text)
+    except Exception as e:
+        context.bot.send_message(update.effective_chat.id, f'Ошибка, {e}')
 
 start_handler = CommandHandler('start', start)
 start_calc_handler = CommandHandler('start_calc', start_calc)
